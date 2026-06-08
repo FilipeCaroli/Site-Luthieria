@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include("partials/site-head", { title: "Decaroli Lutheria - Onde a madeira encontra a alma" }) %>
+
+<body>
+	<a class="skip" href="#main">Pular para o conteúdo principal</a>
+
+	<div class="page active" aria-label="Página principal">
+<%- include("partials/site-nav") %>
+
+		<main id="main" tabindex="-1">
+
+			<!-- HERO -->
+			<section class="hero" id="sec-home" aria-labelledby="h1t">
+				<div class="hero-text">
+					<span class="eyebrow" aria-hidden="true">Lutheria Artesanal · Brasil</span>
+					<h1 id="h1t">Cada violão,<br>uma obra <em>única</em></h1>
+					<p>
+						Construídos individualmente — jamais em série —, os instrumentos
+						da <strong>Decaroli Lutheria</strong> nascem da escolha criteriosa das
+						madeiras,
+						de um profundo conhecimento acústico e de centenas de horas de trabalho
+						manual.
+						Uma voz para o concertista mais exigente. Uma companheira para o músico
+						que descobriu no violão popular o coração da música brasileira.
+					</p>
+					<a class="btn-outline" href="#sec-inst" onclick="goto('sec-inst')"
+						aria-label="Conhecer os instrumentos disponíveis">
+						Conhecer os instrumentos
+					</a>
+				</div>
+				<div class="hero-vis" aria-hidden="true">
+					<span class="guitar-float">
+						<img src="/images/hero-guitar.png"
+							alt=""
+							style="height:min(340px,66vw);width:auto;object-fit:contain;" />
+					</span>
+				</div>
+			</section>
+
+			<!-- MANIFESTO -->
+			<section class="manifesto" aria-labelledby="mft">
+				<h2 id="mft" class="sr">Nossa filosofia</h2>
+				<blockquote aria-label="Citação da filosofia Decaroli Lutheria">
+					Um instrumento de concerto não amplifica o talento — ele o libera.
+				</blockquote>
+				<span class="attr" aria-hidden="true">— Decaroli Lutheria</span>
+				<div class="pillars" role="list" aria-label="Nossos pilares">
+					<article class="pillar" role="listitem">
+						<div class="pillar-icon" aria-hidden="true">✦</div>
+						<strong>Um por vez</strong>
+						<p>Cada violão é construído individualmente, do início ao fim, sem linha
+							de produção.</p>
+					</article>
+					<article class="pillar" role="listitem">
+						<div class="pillar-icon" aria-hidden="true">✦</div>
+						<strong>Madeiras vivas</strong>
+						<p>Cada prancha é selecionada pela densidade, veio e ressonância — não
+							pelo lote.</p>
+					</article>
+					<article class="pillar" role="listitem">
+						<div class="pillar-icon" aria-hidden="true">✦</div>
+						<strong>Acústica calculada</strong>
+						<p>Espessura do tampo, arqueamento e barras definem a voz antes da
+							primeira nota.</p>
+					</article>
+					<article class="pillar" role="listitem">
+						<div class="pillar-icon" aria-hidden="true">✦</div>
+						<strong>Duas tradições</strong>
+						<p>A precisão espanhola temperada pelo calor e liberdade da música
+							brasileira.</p>
+					</article>
+				</div>
+			</section>
+
+			<!-- O LUTHIER -->
+			<section class="luthier-sec" id="sec-luth" aria-labelledby="ltht">
+					<div class="luthier-photo-wrap">
+						<img class="luthier-photo"
+							src="/images/luthier-filipe-decaroli.jpeg"
+							alt="Filipe Decaroli, luthier fundador da Decaroli Lutheria" width="160"
+							height="160" />
+					<p class="photo-caption" aria-hidden="true">Filipe Decaroli</p>
+				</div>
+				<div class="luthier-text">
+					<span class="eyebrow">O Constructor</span>
+					<h2 id="ltht">Filipe <em>Decaroli</em></h2>
+					<p>
+						Filipe Decaroli iniciou sua jornada na lutheria movido por uma convicção
+						simples:
+						o violão certo transforma a relação do músico com a música. Desde os
+						primeiros
+						instrumentos, o que chama atenção não é o volume de produção —
+						é a <strong>qualidade do resultado</strong>.
+					</p>
+					<p>
+						Seus violões têm sido reconhecidos pelo timbre encorpado, pela
+						<strong>projeção equilibrada</strong> e por um acabamento que revela
+						atenção ao menor detalhe. A influência da <strong>escola
+							espanhola</strong>
+						— Torres, Hauser, Fleta — guia as escolhas construtivas, enquanto o
+						ouvido
+						brasileiro apura o equilíbrio entre clareza, calor e presença.
+					</p>
+					<p>
+						Cada instrumento que sai do ateliê carrega a assinatura de Filipe.
+						Porque foi ele, e somente ele, quem o construiu — sem pressa,
+						sem atalhos.
+					</p>
+				</div>
+			</section>
+
+			<!-- INSTRUMENTOS — Linha Master primeiro, depois Série Especial -->
+			<section class="sec" id="sec-inst" aria-labelledby="instt">
+				<div class="sec-head">
+					<span class="eyebrow" aria-hidden="true">Nossas Linhas</span>
+					<h2 id="instt">Nossas linhas</h2>
+					<p>
+						Três modelos, uma filosofia. Do <strong>Caatinga</strong> — ponto de
+						entrada
+						na lutheria artesanal com madeiras 100% brasileiras — à
+						<strong>Linha Master</strong>, a escolha mais popular entre músicos que
+						priorizam qualidade e custo-benefício, até a <strong>Série
+							Especial</strong>,
+						o topo da produção Decaroli para o concertista mais exigente.
+						Em todos eles: construção individual, madeiras selecionadas veio a veio
+						e o mesmo rigor artesanal. Alterne o tampo com os botões e passe
+						o cursor sobre o violão para ver o verso.
+					</p>
+				</div>
+
+				<div class="cards" role="list" aria-label="Linhas disponíveis">
+
+
+					<!-- CAATINGA — primeiro, mais acessível -->
+					<article class="card" id="c-caat" role="listitem"
+						aria-label="Caatinga — violão de entrada artesanal">
+						<div class="card-top">
+							<span class="badge-entry" aria-label="Caatinga">Caatinga</span>
+							<span class="badge-wood"
+								aria-label="Tampo: <strong>Marupá</strong>">Tampo
+								Marupá</span>
+							<div id="d-caat" aria-live="polite"
+								aria-label="Imagem do Caatinga"></div>
+						</div>
+						<div class="card-body">
+							<span class="sub">O ponto de entrada na lutheria
+								artesanal</span>
+							<h3>Caatinga</h3>
+							<p>
+								O primeiro violão assinado por Filipe Decaroli.
+								Construído com o mesmo
+								cuidado artesanal dos modelos superiores, o
+								<strong>Caatinga</strong>
+								leva o nome da natureza brasileira — resistente,
+								autêntica, cheia de vida.
+								Fundo e faixas em <strong>Louro Canela</strong>, tampo
+								em <strong>Marupá</strong>,
+								escala em <strong>Jatobá</strong> e braço em
+								<strong>Tauari</strong>. Madeiras 100% brasileiras,
+								escolhidas pela beleza, trabalhabilidade e timbre
+								caloroso.
+								Para quem quer entrar no universo da lutheria sem abrir
+								mão da qualidade.
+							</p>
+							<dl class="specs" aria-label="Especificações do Caatinga">
+								<div class="spec">
+									<dt>Fundo / Faixas</dt>
+									<dd>Louro Canela</dd>
+								</div>
+								<div class="spec">
+									<dt>Escala</dt>
+									<dd>Jatobá</dd>
+								</div>
+								<div class="spec">
+									<dt>Braço</dt>
+									<dd>Tauari</dd>
+								</div>
+								<div class="spec">
+									<dt>Tampo</dt>
+									<dd>Marupá</dd>
+								</div>
+							</dl>
+						</div>
+					</article>
+
+					<!-- LINHA MASTER — primeiro, mais popular -->
+					<article class="card" id="c-esp" role="listitem"
+						aria-label="Linha Master — a escolha mais popular">
+						<div class="card-top">
+							<span class="badge-pop" aria-label="Mais popular">Master</span>
+							<div class="wood-toggle" role="group"
+								aria-label="Escolher tampo da Linha Master">
+								<button class="tw on" aria-pressed="true"
+									onclick="setWood('esp','cedar',this)"
+									aria-label="Linha Master — <strong>Cedro Canadense</strong>">Cedro</button>
+								<button class="tw" aria-pressed="false"
+									onclick="setWood('esp','pine',this)"
+									aria-label="Linha Master — <strong>Pinho Alemão</strong>">Pinho</button>
+							</div>
+							<div id="d-esp" aria-live="polite"
+								aria-label="Imagem da Linha Master"></div>
+						</div>
+						<div class="card-body">
+							<span class="sub">Master</span>
+							<h3>Master</h3>
+							<p>
+								O instrumento mais procurado da Decaroli Lutheria.
+								Escolhido por músicos
+								que valorizam qualidade de luthier sem compromisso com o
+								orçamento —
+								seja para o repertório erudito, o choro ou a bossa nova.
+								Fundo e laterais em <strong>Imbuia brasileira</strong>,
+								escala em
+								<strong>Pau-ferro</strong> e braço em
+								<strong>Cedro</strong>. Construção artesanal
+								idêntica à Série Especial; as madeiras é que definem o
+								timbre.
+							</p>
+							<dl class="specs" aria-label="Especificações da Linha Master">
+								<div class="spec">
+									<dt>Fundo / Lat.</dt>
+									<dd>Imbuia</dd>
+								</div>
+								<div class="spec">
+									<dt>Escala</dt>
+									<dd>Pau-ferro</dd>
+								</div>
+								<div class="spec">
+									<dt>Braço</dt>
+									<dd>Cedro</dd>
+								</div>
+								<div class="spec">
+									<dt>Tampo</dt>
+									<dd>Cedro ou Pinho</dd>
+								</div>
+							</dl>
+						</div>
+					</article>
+
+					<!-- SÉRIE ESPECIAL — segundo -->
+					<article class="card" id="c-master" role="listitem"
+						aria-label="Série Especial — violão clássico de concerto">
+						<div class="card-top">
+							<span class="badge" aria-hidden="true">Série Especial</span>
+							<div class="wood-toggle" role="group"
+								aria-label="Escolher tampo da Série Especial">
+								<button class="tw on" aria-pressed="true"
+									onclick="setWood('master','cedar',this)"
+									aria-label="Série Especial — <strong>Cedro Canadense</strong>">Cedro</button>
+								<button class="tw" aria-pressed="false"
+									onclick="setWood('master','pine',this)"
+									aria-label="Série Especial — <strong>Pinho Alemão</strong>">Pinho</button>
+							</div>
+							<div id="d-master" aria-live="polite"
+								aria-label="Imagem da Série Especial"></div>
+						</div>
+						<div class="card-body">
+							<span class="sub">Para o concertista exigente</span>
+							<h3>Série Especial</h3>
+							<p>
+								O topo da produção Decaroli. Fundo e laterais em
+								<strong>Jacarandá da Bahia</strong>, escala em
+								<strong>Ébano africano</strong> e braço em
+								<strong>Mogno</strong> seleto —
+								madeiras que os grandes mestres europeus consagraram ao
+								longo de séculos.
+								Tampo em <strong>Cedro Canadense</strong> ou
+								<strong>Pinho Alemão</strong>, escolhido veio a veio
+								pela leveza, rigidez e projeção. Ideal para recitais,
+								concursos
+								e gravações de alto nível.
+							</p>
+							<dl class="specs" aria-label="Especificações da Série Especial">
+								<div class="spec">
+									<dt>Fundo / Lat.</dt>
+									<dd>Jacarandá</dd>
+								</div>
+								<div class="spec">
+									<dt>Escala</dt>
+									<dd>Ébano</dd>
+								</div>
+								<div class="spec">
+									<dt>Braço</dt>
+									<dd>Mogno</dd>
+								</div>
+								<div class="spec">
+									<dt>Tampo</dt>
+									<dd>Cedro ou Pinho</dd>
+								</div>
+							</dl>
+						</div>
+					</article>
+
+				</div>
+			</section>
+
+		</main>
+
+
+<%- include("partials/site-footer") %>
+	</div>
+
+	<script src="/js/script.js"></script>
+</body>
+
+</html>

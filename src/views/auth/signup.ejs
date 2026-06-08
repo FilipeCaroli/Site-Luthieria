@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include("../partials/site-head", { title: "Cadastro - Decaroli Lutheria" }) %>
+
+	<body>
+		<div id="pg-login" class="page active" role="main" aria-label="Cadastro no site">
+			<form class="login-wrap" action="/auth/signup" method="POST" aria-labelledby="st">
+				<div class="login-head">
+					<span class="brand-name" id="st" aria-label="Decaroli Lutheria">
+						Decaroli<br><em>Lutheria</em>
+					</span>
+					<span class="brand-tag" aria-label="Slogan: Onde a madeira encontra a alma">
+						Onde a madeira encontra a alma
+					</span>
+				</div>
+				<div class="divider" role="separator" aria-hidden="true"></div>
+				<div class="field">
+					<label for="username">Usuário</label>
+					<input id="username" name="username" type="text" placeholder="Seu usuário"
+						autocomplete="username" aria-required="true"
+						aria-describedby="username-e" required />
+					<p class="err-msg" id="username-e" role="alert" aria-live="polite">
+						<%= locals.errors ? locals.errors.find(e=> e.path === "username")?.msg :
+							'' %>
+					</p>
+				</div>
+				<div class="field">
+					<label for="email">E-mail</label>
+					<input id="email" name="email" type="email" placeholder="seu@email.com"
+						autocomplete="email" aria-required="true" aria-describedby="email-e"
+						required />
+					<p class="err-msg" id="email-e" role="alert" aria-live="polite">
+						<%= locals.errors ? locals.errors.find(e=> e.path === "email")?.msg : ''
+							%>
+					</p>
+				</div>
+				<div class="field">
+					<label for="password">Senha</label>
+					<input id="password" name="password" type="password" placeholder="••••••"
+						autocomplete="new-password" minlength="8" aria-required="true"
+						aria-describedby="password-e" required />
+					<p class="err-msg" id="password-e" role="alert" aria-live="polite">
+						<%= locals.errors ? locals.errors.find(e=> e.path === "password")?.msg :
+							'' %>
+					</p>
+				</div>
+				<button class="btn-primary" type="submit" aria-label="Criar cadastro">Cadastrar</button>
+				<p class="auth-link">Já tem conta? <a href="/auth/login">Entrar</a></p>
+			</form>
+		</div>
+	</body>
+
+</html>

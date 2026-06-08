@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include("../partials/site-head", { title: "Pedidos - Decaroli Lutheria" }) %>
+
+<body>
+	<a class="skip" href="#admin-main">Pular para o conteúdo principal</a>
+
+	<div class="page active" aria-label="Administração de pedidos">
+<%- include("../partials/site-nav") %>
+
+		<main id="admin-main" class="admin-main" tabindex="-1">
+			<header class="admin-head">
+				<span class="eyebrow">Admin</span>
+				<h1>Pedidos de<br>interessados</h1>
+				<p>Solicitações enviadas pelo formulário de contato.</p>
+			</header>
+
+			<section class="admin-panel" aria-labelledby="requests-title">
+				<div class="admin-panel-head">
+					<h2 id="requests-title">Pedidos recebidos</h2>
+					<span><%= requests.length %> registro<%= requests.length === 1 ? '' : 's' %></span>
+				</div>
+
+				<% if (requests.length === 0) { %>
+					<p class="admin-empty">Nenhum pedido foi enviado ainda.</p>
+				<% } else { %>
+					<div class="request-list">
+						<% requests.forEach((request) => { %>
+							<article class="request-item">
+								<div class="request-top">
+									<div>
+										<h3><%= request.name %></h3>
+										<p><%= request.instrument %></p>
+									</div>
+									<time datetime="<%= request.createdAt.toISOString() %>">
+										<%= moment(request.createdAt).format("DD/MM/YYYY HH:mm") %>
+									</time>
+								</div>
+								<dl class="request-meta">
+									<div>
+										<dt>E-mail</dt>
+										<dd><a href="mailto:<%= request.email %>"><%= request.email %></a></dd>
+									</div>
+									<div>
+										<dt>Telefone</dt>
+										<dd><%= request.phone || "Não informado" %></dd>
+									</div>
+									<div>
+										<dt>CPF</dt>
+										<dd><%= request.cpf %></dd>
+									</div>
+								</dl>
+								<p class="request-message"><%= request.message %></p>
+							</article>
+						<% }) %>
+					</div>
+				<% } %>
+			</section>
+		</main>
+
+<%- include("../partials/site-footer") %>
+	</div>
+	<script src="/js/script.js"></script>
+</body>
+
+</html>

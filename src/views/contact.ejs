@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include("partials/site-head", { title: "Decaroli Lutheria - Onde a madeira encontra a alma" }) %>
+
+	<body>
+		<a class="skip" href="#form-main">Pular para o conteúdo principal</a>
+
+		<div class="page active" aria-label="Página de contato">
+			<%- include("partials/site-nav") %>
+
+				<main id="form-main" tabindex="-1" aria-label="Formulário de contato">
+					<div class="form-wrap">
+						<div class="form-head">
+							<span class="eyebrow">Fale conosco</span>
+							<h1>Interesse em<br>um instrumento?</h1>
+							<p>
+								Cada violão começa com uma conversa. Conte-nos sobre o
+								seu perfil
+								como músico, o repertório que toca e o que espera do
+								instrumento.
+								Filipe entrará em contato pessoalmente para orientá-lo
+								na melhor
+								escolha.
+							</p>
+						</div>
+						<div id="fw" style="<%= locals.sent ? 'display:none;' : '' %>">
+							<form class="form" action="/contato" method="POST" novalidate
+								aria-label="Formulário de contato Decaroli Lutheria">
+								<div class="row">
+									<div class="ff">
+										<label for="fn">Nome completo <span
+												aria-hidden="true">*</span></label>
+										<input id="fn" name="name" type="text"
+											placeholder="Seu nome"
+											value="<%= locals.formData?.name || '' %>"
+											autocomplete="name"
+											aria-required="true"
+											aria-describedby="fn-e" />
+										<p class="err" id="fn-e" role="alert"
+											aria-live="polite">
+											<%= locals.errors?.find(e=>
+												e.path === "name")?.msg
+												|| '' %>
+										</p>
+									</div>
+									<div class="ff">
+										<label for="fe">E-mail <span
+												aria-hidden="true">*</span></label>
+										<input id="fe" name="email" type="email"
+											placeholder="seu@email.com"
+											value="<%= locals.formData?.email || '' %>"
+											autocomplete="email"
+											aria-required="true"
+											aria-describedby="fe-e" />
+										<p class="err" id="fe-e" role="alert"
+											aria-live="polite">
+											<%= locals.errors?.find(e=>
+												e.path === "email")?.msg
+												|| '' %>
+										</p>
+									</div>
+								</div>
+								<div class="ff">
+									<label for="fc">CPF <span
+											aria-hidden="true">*</span></label>
+									<input id="fc" name="cpf" type="text"
+										placeholder="000.000.000-00"
+										value="<%= locals.formData?.cpf || '' %>"
+										maxlength="14" inputmode="numeric"
+										autocomplete="off" aria-required="true"
+										aria-describedby="fc-h fc-e"
+										oninput="formatarCPF(this)" />
+									<p class="hint" id="fc-h">Somente números —
+										validação automática
+									</p>
+									<p class="err" id="fc-e" role="alert"
+										aria-live="polite">
+										<%= locals.errors?.find(e=> e.path ===
+											"cpf")?.msg || '' %>
+									</p>
+								</div>
+								<div class="row">
+									<div class="ff">
+										<label for="fm">Instrumento de interesse
+											<span
+												aria-hidden="true">*</span></label>
+										<select id="fm" name="instrument"
+											aria-required="true"
+											aria-describedby="fm-e">
+											<option value="">Selecione...
+											</option>
+											<option value="caat"
+												<%=locals.formData?.instrument==="caat"
+												? "selected" : "" %>
+												>Caatinga</option>
+											<option value="mst-c"
+												<%=locals.formData?.instrument==="mst-c"
+												? "selected" : "" %>
+												>Master (Cedro)</option>
+											<option value="mst-p"
+												<%=locals.formData?.instrument==="mst-p"
+												? "selected" : "" %>
+												>Master (Pinho)</option>
+											<option value="esp-c"
+												<%=locals.formData?.instrument==="esp-c"
+												? "selected" : "" %>
+												>Série Especial (Cedro)
+											</option>
+											<option value="esp-p"
+												<%=locals.formData?.instrument==="esp-p"
+												? "selected" : "" %>
+												>Série Especial (Pinho)
+											</option>
+										</select>
+										<p class="err" id="fm-e" role="alert"
+											aria-live="polite">
+											<%= locals.errors?.find(e=>
+												e.path ===
+												"instrument")?.msg || ''
+												%>
+										</p>
+									</div>
+									<div class="ff">
+										<label for="ft">Telefone</label>
+										<input id="ft" name="phone" type="tel"
+											placeholder="(11) 99999-9999"
+											value="<%= locals.formData?.phone || '' %>"
+											maxlength="15"
+											autocomplete="tel"
+											inputmode="tel"
+											oninput="mTel(this)" />
+									</div>
+								</div>
+								<div class="ff">
+									<label for="fmsg">Mensagem <span
+											aria-hidden="true">*</span></label>
+									<textarea id="fmsg" name="message"
+										placeholder="Conte-nos sobre seu perfil musical, repertório e o que espera do instrumento..."
+										aria-required="true"
+										aria-describedby="fmsg-e">
+										<%= locals.formData?.message || '' %>
+									</textarea>
+									<p class="err" id="fmsg-e" role="alert"
+										aria-live="polite">
+										<%= locals.errors?.find(e=> e.path ===
+											"message")?.msg || '' %>
+									</p>
+								</div>
+								<button type="submit" class="btn-primary"
+									aria-label="Enviar mensagem de contato">Enviar</button>
+							</form>
+						</div>
+						<div class="success" id="succ" role="status" aria-live="polite"
+							tabindex="-1"
+							style="<%= locals.sent ? 'display:block;' : '' %>">
+							<span class="sico" aria-hidden="true">✦</span>
+							<h2>Mensagem recebida.</h2>
+							<p>Obrigado pelo seu interesse.<br>
+								Filipe entrará em contato pessoalmente em breve.</p>
+							<a class="btn-outline"
+								style="margin-top:1.8rem;display:inline-flex;" href="/"
+								aria-label="Voltar à página inicial">Voltar ao
+								início</a>
+						</div>
+					</div>
+				</main>
+
+				<%- include("partials/site-footer") %>
+		</div>
+
+		<script src="/js/script.js"></script>
+	</body>
+
+</html>

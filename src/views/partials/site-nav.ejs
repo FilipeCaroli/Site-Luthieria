@@ -1,0 +1,22 @@
+		<nav aria-label="Navegação principal">
+			<a class="nav-brand" href="/" aria-label="Decaroli Lutheria - página inicial">
+				Decaroli <em>Lutheria</em>
+			</a>
+			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</button>
+			<div class="nav-menu" id="nav-menu">
+				<div class="nav-links" role="list">
+					<a role="listitem" href="/">Início</a>
+					<a role="listitem" href="/#sec-inst">Instrumentos</a>
+					<a role="listitem" href="/#sec-luth">O Luthier</a>
+					<a role="listitem" href="/contato">Contato</a>
+					<% if (locals.currentUser?.isAdmin) { %>
+						<a role="listitem" href="/admin/pedidos">Admin</a>
+					<% } %>
+				</div>
+				<a class="btn-ghost" href="/auth/log-out" aria-label="Sair do site">Sair</a>
+			</div>
+		</nav>

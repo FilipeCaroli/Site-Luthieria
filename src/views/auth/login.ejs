@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include("../partials/site-head", { title: "Entrar - Decaroli Lutheria" }) %>
+
+<body>
+	<div id="pg-login" class="page active" role="main" aria-label="Acesso ao site">
+		<form class="login-wrap" action="/auth/login" method="POST" aria-labelledby="lt">
+			<div class="login-head">
+				<span class="brand-name" id="lt" aria-label="Decaroli Lutheria">
+					Decaroli<br><em>Lutheria</em>
+				</span>
+				<span class="brand-tag" aria-label="Slogan: Onde a madeira encontra a alma">
+					Onde a madeira encontra a alma
+				</span>
+			</div>
+			<div class="divider" role="separator" aria-hidden="true"></div>
+			<div class="field">
+				<label for="iu">Usuário</label>
+				<input id="iu" name="username" type="text" placeholder="Seu usuário"
+					autocomplete="username" aria-required="true" aria-describedby="lerr"
+					required />
+			</div>
+			<div class="field">
+				<label for="ip">Senha</label>
+				<input id="ip" name="password" type="password" placeholder="••••••"
+					autocomplete="current-password" aria-required="true"
+					aria-describedby="lerr" required />
+			</div>
+			<button class="btn-primary" type="submit" aria-label="Entrar no site">Entrar</button>
+			<p class="err-msg" id="lerr" role="alert" aria-live="assertive"><%= locals.authError || '' %></p>
+			<p class="auth-link">Ainda não tem conta? <a href="/auth/signup">Cadastre-se</a></p>
+		</form>
+	</div>
+</body>
+
+</html>
