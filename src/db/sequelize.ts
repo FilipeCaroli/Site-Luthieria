@@ -14,5 +14,4 @@ fs.mkdirSync(path.dirname(storage), { recursive: true });
 export const sequelize = new Sequelize({
   dialect: "sqlite",
   storage,
-  logging: process.env.NODE_ENV === "development" ? console.log : false,
 });
