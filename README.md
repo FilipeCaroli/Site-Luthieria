@@ -23,18 +23,19 @@ PORT=3000
 SQLITE_STORAGE="./data/database.sqlite"
 ```
 
-3. Crie as tabelas no arquivo SQLite:
-
-```bash
-npm run db:migrate
-```
-
 ## Executando
 
 Para iniciar em modo de desenvolvimento:
 
 ```bash
 npm run dev
+```
+
+Ou para iniciar em modo de produção:
+
+```bash
+npm run build
+npm run start
 ```
 
 O app ficara disponivel em:
@@ -47,10 +48,11 @@ ou na porta definida em `PORT`.
 
 ## Acesso Admin
 
-1. Acesse `/auth/signup` e crie um usuario.
-2. Promova o usuario para administrador no banco, alterando `isAdmin` para `true`.
+Por padrão, o usuário `Filipe123` com a senha `Filipe123`, já tem papel de administrador. Mas caso deseje promover um usuário:
 
-Altere o campo diretamente no SQLite, por exemplo:
+1. No banco, altere `isAdmin` para `true`.
+
+Por exemplo:
 
 ```sql
 UPDATE "User" SET "isAdmin" = true WHERE email = 'email-do-admin@example.com';
@@ -67,10 +69,3 @@ Com o usuario administrador logado, acesse:
 Os envios do formulario de contato sao salvos na tabela `ContactRequest`.
 O administrador pode visualizar esses pedidos pela area admin.
 
-## Comandos Uteis
-
-```bash
-npm run build        # builda o projeto
-npm run db:migrate   # cria as tabelas
-npm run dev          # inicia o servidor
-```
